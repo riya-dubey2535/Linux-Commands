@@ -1,0 +1,101 @@
+
+Linux Commands - Practical & Detailed Notes for DevOps and Beginners
+
+1. Basic Navigation & File Handling
+   1.1 ls – Lists all files and directories in the current directory.
+       - ls -l → Long format with details like permissions, size.
+       - ls -a → Show hidden files.
+   1.2 pwd – Prints the full path of the current working directory.
+       - Helpful to know where you are inside the file system.
+   1.3 cd – Changes directory.
+       - cd /home/user → Go to specific path.
+       - cd .. → Move one step back.
+       - cd ~ → Go to home directory.
+   1.4 mkdir – Creates a new directory.
+       - mkdir newfolder
+       - mkdir -p folder1/folder2 → Create nested folders.
+   1.5 touch – Creates a new empty file.
+       - touch file.txt → Creates file.txt if it doesn’t exist.
+   1.6 rm – Deletes files or directories.
+       - rm file.txt → Delete a file.
+       - rm -r folder/ → Delete a directory and its content.
+       - rm -rf folder/ → Force delete without prompt (use with caution).
+   1.7 cp – Copies files or directories.
+       - cp file1.txt file2.txt → Copy file1 to file2.
+       - cp -r folder1/ folder2/ → Copy entire folder.
+   1.8 mv – Moves or renames files/directories.
+       - mv oldname.txt newname.txt → Rename file.
+       - mv file.txt /new/location/ → Move file.
+
+2. File Viewing & Text Output
+   2.1 cat – Concatenate and display content of a file.
+       - cat file.txt → Show content.
+   2.2 head – Shows first 10 lines of a file.
+       - head -n 5 file.txt → Show first 5 lines.
+   2.3 tail – Shows last 10 lines of a file.
+       - tail -f logfile.log → Live monitoring of log files.
+   2.4 echo – Prints message or variable value.
+       - echo Hello → Print Hello.
+       - echo $HOME → Print home path.
+   2.5 clear – Clears the terminal screen.
+
+3. File Compression & Archiving
+   3.1 zip/unzip – Compress or extract zip files.
+       - zip file.zip file.txt → Zip file.
+       - unzip file.zip → Unzip file.
+   3.2 tar – Archive multiple files into .tar or .tar.gz format.
+       - tar -cvf archive.tar file1 file2
+       - tar -xvf archive.tar → Extract tar file.
+       - tar -czvf archive.tar.gz folder/ → Compress folder.
+
+4. System Information
+   4.1 uname -a – Full system information.
+   4.2 whoami – Displays the username of current user.
+   4.3 df -h – Disk space usage (human-readable).
+   4.4 free -h – RAM and swap usage (human-readable).
+   4.5 ifconfig / ip a – View IP address and network interfaces.
+
+5. Process & Service Management
+   5.1 ps aux – Lists all running processes.
+   5.2 top / htop – Real-time CPU, memory usage (htop is advanced version).
+   5.3 kill [PID] – Kill process by ID.
+   5.4 killall [name] – Kill all processes by name.
+   5.5 service [name] start/stop/status – Manage services.
+       - service apache2 start
+
+6. Permissions & Security
+   6.1 chmod – Change file/folder permissions.
+       - chmod 755 script.sh → rwxr-xr-x
+   6.2 chown – Change owner of file/folder.
+       - chown user:group file.txt
+   6.3 sudo – Run command as root/admin.
+       - sudo apt update
+   6.4 ufw – Uncomplicated Firewall (Enable/Allow/Block ports).
+       - sudo ufw enable
+       - sudo ufw allow 22/tcp → Allow SSH
+
+7. Networking & Remote Access
+   7.1 ssh user@ip – Connect to remote server.
+       - ssh root@192.168.1.10
+   7.2 wget [URL] – Download file from web.
+       - wget https://example.com/file.zip
+
+8. Environment & Variables
+   8.1 export VAR=value – Set environment variable.
+       - export PATH=$PATH:/my/custom/path
+   8.2 alias – Create shortcut for long command.
+       - alias ll='ls -la'
+
+9. Help & Package Management
+   9.1 man [command] – Full manual for any command.
+   9.2 whatis [command] – One-line description.
+   9.3 whereis [command] – Find path of binary/manual/source.
+   9.4 apt / yum / pacman / rpm – Package managers for different distros.
+       - sudo apt install git
+
+10. Bonus (DevOps & Power Usage)
+    10.1 ln -s – Create symbolic links.
+         - ln -s /real/path shortcut
+    10.2 history – Show list of previously used commands.
+    10.3 crontab -e – Schedule repeated tasks.
+         - 0 5 * * * /script/backup.sh → Daily 5AM run script.
